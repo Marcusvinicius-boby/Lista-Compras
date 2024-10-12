@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    
+    <
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   
+<title>Super Max Atacarejo</title>
+    
+   
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8b400;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+        }
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        h1 {
+            margin-left: 20px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .item img {
+            width: 100px;
+            margin-right: 15px;
+        }
+        .cart {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #000;
+        }
+        .total {
+            font-weight: bold;
+        }
+        footer {
+            background-color: #f8b400;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+            color: #000;
+        }
+        iframe {
+            margin: 20px 0;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+
+</head>
+</head>
+<body>
+    <!-- Header com logo e navegação -->
+    
+<header>
+        
+
+       
+
+<img src="./img/images.jpeg" alt="Logo Super Max Atacarejo">
+
+       
+<nav>
+            
+           
+<a href="#">Home</a>
+            
+
+           
+<a href="#">Sobre Nós</a>
+            <a href="#">Contatos</a>
+        
+</nav>
+
+       
+</nav>
+
+</header>
+
+    
+
+   
+<h1>Bem-vindo ao Super Max Atacarejo</h1>
+
+    <!-- Produtos -->
+    
+<div class="item">
+        
+       
+<img src="./img/biscoito.jpg" alt="Biscoito Vitarella 350GR Maizena Tradicional">
+        
+<span>Biscoito Vitarella 350GR Maizena Tradicional - R$7,50</span>
+        
+<label for="quantidade1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantidade:</label>
+        
+       
+<input type="number" id="quantidade1" value="1" min="1">
+        
+
+<button onclick="adicionarAoCarrinho('Biscoito Vitarella 350GR Maizena Tradicional', 7.5, 'quantidade1')">Adicionar ao carrinho</button>
+    
+</div>
+   
+<div class="item">
+        
+       
+<img src="./img/coca-cola.jpg" alt="Refrigerante Pet 2 Litros - Coca-Cola">
+        
+<span>Refrigerante Pet 2 Litros - Coca-Cola - R$12,00</span>
+        
+       
+<label for="quantidade2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantidade:</label>
+        
+        
+<input type="number" id="quantidade2" value="1" min="1">
+        
+     
+<button onclick="adicionarAoCarrinho('Refrigerante Pet 2 Litros - Coca-Cola', 12, 'quantidade2')">Adicionar ao carrinho</button>
+    </div>
+
+    
+<div class="item">
+        <img src="./img/papel higienico.jpeg" alt="Papel Higiênico Folha Tripla Personal VIP 20m">
+        
+<span>Papel Higiênico Folha Tripla Personal VIP 20m - R$14,90</span>
+        
+      
+<label for="Papel Higiênico Folha Tripla Personal VIP 20m">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantidade:</label>
+        
+    
+<input type="number" id="quantidade3" value="1" min="1">
+        <button onclick="adicionarAoCarrinho('Papel Higiênico Folha Tripla Personal VIP 20m', 14.9, 'quantidade3')">Adicionar ao carrinho</button>
+    </div>
+
+
+<div class="item">
+        <img src="./img/carne.jpeg" alt="Carne Bovina Músculo Traseiro kg">
+        
+<span>Carne Bovina Músculo Traseiro kg - R$23,20</span>
+        
+      
+<label for="Carne Bovina Músculo Traseiro kg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantidade:</label>
+        
+    
+<input type="number" id="quantidade4" value="1" min="1">
+        <button onclick="adicionarAoCarrinho('Carne Bovina Músculo Traseiro kg', 23.2, 'quantidade4')">Adicionar ao carrinho</button>
+    </div>
+
+
+<div class="item">
+        <img src="./img/arroz.jpeg" alt="Arroz Branco 101 1Kg">
+        
+<span>Arroz Branco 101 1Kg - R$6,50</span>
+        
+      
+<label for="Arroz Branco 101 1Kg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantidade:</label>
+        
+    
+<input type="number" id="quantidade5" value="1" min="1">
+        <button onclick="adicionarAoCarrinho('Arroz Branco 101 1Kg', 6.5, 'quantidade5')">Adicionar ao carrinho</button>
+    </div>
+<!-- Carrinho -->
+    
+<div class="cart">
+        
+<h2>Carrinho</h2>
+        
+<ul id="lista-carrinho">
+        
+</ul>
+        
+      
+<p class="total">Total: R$ <span id="total">0.00</span></p>
+<p class="desconto"> Desconto para clientes Diamante: R$ <span id="desconto">0.00</span></p>
+<h3>Total com Desconto: R$ <span id="valor-total-com-desconto">0.00</span></h3>
+</div>
+
+    
+
+<!-- Mapa de Localização -->
+    <h2>Localização</h2>
+    
+   
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15917.512624979834!2d-38.545064964038626!3d-3.769177872063802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c748ecc2b6b03b%3A0x92185f79b55f7732!2sBR-116%2C%20Fortaleza%20-%20CE!5e0!3m2!1spt-BR!2sbr!4v1697106449403!5m2!1spt-BR!2sbr" 
+    frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+
+    
+
+   
+<!-- Rodapé -->
+<footer>
+        <a href="https://wa.me/5511999999999" target="_blank"><img src="./img/whatssap.jpeg" alt="WhatsApp" width="20" height="20">WhatsApp</a>
+        <a href="https://facebook.com" target="_blank"><img src="./img/facebook.png" alt="facebook" width="20" height="20">Facebook</a>
+        <a href="https://instagram.com" target="_blank"><img src="./img/instagram.jpeg" alt="instagram" width="20" height="20">Instagram</a>
+ <!-- Texto adicional -->
+ <p>
+    Aceitamos cartões Visa, Mastercard e Elo. Clientes do programa fidelidade Diamante têm desconto de 10% no valor total das compras.
+</p>
+    </footer>
+
+</body>
+<!-- JS -->
+ <script src="./js/app.js"></script>
+</html>
